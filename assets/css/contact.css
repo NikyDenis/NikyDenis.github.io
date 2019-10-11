@@ -1,0 +1,40 @@
+
+.form1{
+    margin: auto;
+
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: center;
+    align-content: center;
+}
+#name{
+    padding-bottom: 5px;
+}
+.form input, textarea{
+    border-radius: 10px;
+    text-align: center ;
+    font-family: 'Expletus sans';
+
+}
+.form textarea{
+    background: 0.2px;
+    border:2px solid rgba(0, 0, 0, 0.3);
+}
+#send {
+    background:url("https://images.alphacoders.com/944/thumb-1920-944812.jpg");
+}
+img{
+    display: flex;
+    flex-direction: column;
+}
+#blue {
+    width: 50px;
+    height: 50px;
+}
+#rose {
+    width: 55px;
+    height: 55px;
+}

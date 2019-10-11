@@ -1,0 +1,533 @@
+/* Typography */
+@import url('https://fonts.googleapis.com/css?family=Courgette|Pacifico|Overlock|Quicksand|Chilanka|Kalam|Livvic|Modak|Nunito|Satisfy|Atma|Baloo+Bhaijaan|Bellefair|Coiny|Darker+Grotesque|Farsan|Kavivanar|Kodchasan|Mali|Pangolin&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Expletus+Sans);
+
+body {
+    width: 100%;
+}
+
+html {
+    font-family: 'Expletus sans';
+}
+
+@media (min-width: 1200px) {
+
+    html,
+    p {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+}
+
+.icons-social i {
+    font-size: 3em;
+}
+
+.test {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    top: 0;
+}
+
+.menu-v {
+    display: flex;
+    justify-content: center;
+    background-image:
+        -webkit-linear-gradient(45deg,
+            transparent,
+            transparent 33%,
+            #BE9FC7 33%,
+            #C2BADB 66%,
+            transparent 66%),
+        -webkit-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            #C2BADB 33%,
+            #BE9FC7 66%,
+            transparent 66%),
+        -webkit-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(255, 255, 255, 0.15)),
+        -webkit-linear-gradient(left, rgb(202, 208, 221), rgb(240, 187, 226));
+}
+
+.menu-v li {
+    padding: 5px 10px 10px 5px;
+    z-index: 2;
+}
+.menu-v li :hover {
+    background-position: center top;
+    background-size: 30px;
+}
+
+.menu-v a {
+    text-decoration: none;
+    color: rgb(31, 36, 47);
+}
+
+/* Custom Styles */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(223, 211, 255);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background:
+        -webkit-linear-gradient(top, rgb(240, 187, 226), rgb(202, 208, 221));
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(202, 208, 221);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    padding: 0 30px;
+    text-align: center;
+}
+
+main>.intro {
+    font-family: 'Mali';
+    font-size: 3.75em;
+    font-weight: 600;
+}
+
+main>.tagline {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
+    font-weight: 100;
+}
+
+.icons-social i {
+    padding: 10px;
+}
+
+#mas {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+/*test */
+.skills {
+    margin: 50px auto 0;
+    max-width: 600px;
+    color: rgb(0, 0, 0);
+}
+
+.skills li {
+    font-family: "Expletus Sans", sans-serif;
+    width: 50%;
+    float: left;
+    list-style-type: none;
+    padding-right: 5.3333333%;
+}
+
+.skills li:nth-child(even) {
+    margin-bottom: 5em;
+}
+
+h2 {
+    margin: 0 0 1.5em;
+    border-bottom: 1px solid #ccc;
+    padding: 0 0 .25em;
+}
+
+/* Styling an indeterminate progress bar */
+
+progress:not(value) {
+    /* Add your styles here. As part of this walkthrough we will focus only on determinate progress bars. */
+}
+
+/* Styling the determinate progress element */
+
+progress[value] {
+    /* Get rid of the default appearance */
+    appearance: none;
+
+    /* This unfortunately leaves a trail of border behind in Firefox and Opera. We can remove that by setting the border to none. */
+    border: none;
+
+    /* Add dimensions */
+    width: 100%;
+    height: 20px;
+
+    /* Although firefox doesn't provide any additional pseudo class to style the progress element container, any style applied here works on the container. */
+    background-color: whiteSmoke;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .5) inset;
+
+    /* Of all IE, only IE10 supports progress element that too partially. It only allows to change the background-color of the progress value using the 'color' attribute. */
+    color: royalblue;
+
+    position: relative;
+    margin: 0 0 1.5em;
+}
+
+/*
+Webkit browsers provide two pseudo classes that can be use to style HTML5 progress element.
+-webkit-progress-bar -> To style the progress element container
+-webkit-progress-value -> To style the progress element value.
+*/
+
+progress[value]::-webkit-progress-bar {
+    background-color: whiteSmoke;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .5) inset;
+}
+
+progress[value]::-webkit-progress-value {
+    position: relative;
+
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    border-radius: 3px;
+
+    /* Let's animate this */
+    animation: animate-stripes 5s linear infinite;
+}
+
+@keyframes animate-stripes {
+    100% {
+        background-position: -100px 0;
+    }
+}
+
+/* Let's spice up things little bit by using pseudo elements. */
+
+progress[value]::-webkit-progress-value:after {
+    /* Only webkit/blink browsers understand pseudo elements on pseudo classes. A rare phenomenon! */
+    content: '';
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+    top: 7px;
+    right: 7px;
+
+    background-color: white;
+    border-radius: 100%;
+}
+
+/* Firefox provides a single pseudo class to style the progress element value and not for container. -moz-progress-bar */
+
+progress[value]::-moz-progress-bar {
+    /* Gradient background with Stripes */
+    background-size: 35px 20px, 100% 100%, 100% 100%;
+    border-radius: 3px;
+
+    /* Firefox doesn't support CSS3 keyframe animations on progress element. Hence, we did not include animate-stripes in this code block */
+}
+
+/* Fallback technique styles */
+.progress-bar {
+    background-color: whiteSmoke;
+    border-radius: 3px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, .5) inset;
+
+    /* Dimensions should be similar to the parent progress element. */
+    width: 100%;
+    height: 20px;
+}
+
+.progress-bar span {
+    background-color: royalblue;
+    border-radius: 3px;
+
+    display: block;
+    text-indent: -9999px;
+}
+
+p[data-value] {
+
+    position: relative;
+}
+
+/* The percentage will automatically fall in place as soon as we make the width fluid. Now making widths fluid. */
+
+p[data-value]:after {
+    content: attr(data-value) '';
+    position: absolute;
+    right: 0;
+}
+
+
+
+
+
+.html5::-webkit-progress-value,
+.fr::-webkit-progress-value {
+    /* Gradient background with Stripes */
+    background-image:
+        -webkit-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            rgba(0, 0, 0, .1) 33%,
+            rgba(0, 0, 0, .1) 66%,
+            transparent 66%),
+        -webkit-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(0, 0, 0, .2)),
+        -webkit-linear-gradient(left, #09c, rgb(199, 107, 187));
+}
+
+.css3::-webkit-progress-value,
+.en::-webkit-progress-value {
+    /* Gradient background with Stripes */
+    background-image:
+        -webkit-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            rgba(0, 0, 0, .1) 33%,
+            rgba(0, 0, 0, .1) 66%,
+            transparent 66%),
+        -webkit-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(0, 0, 0, .2)),
+        -webkit-linear-gradient(left, #09c, rgb(247, 247, 112));
+}
+
+.javascript::-webkit-progress-value,
+.es::-webkit-progress-value {
+    /* Gradient background with Stripes */
+    background-image:
+        -webkit-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            rgba(0, 0, 0, .1) 33%,
+            rgba(0, 0, 0, .1) 66%,
+            transparent 66%),
+        -webkit-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(0, 0, 0, .2)),
+        -webkit-linear-gradient(left, #09c, #690);
+}
+
+.photoshop::-webkit-progress-value,
+.php::-webkit-progress-value {
+    /* Gradient background with Stripes */
+    background-image:
+        -webkit-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            rgba(0, 0, 0, .1) 33%,
+            rgba(0, 0, 0, .1) 66%,
+            transparent 66%),
+        -webkit-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(0, 0, 0, .2)),
+        -webkit-linear-gradient(left, rgb(247, 247, 112), rgb(111, 59, 255));
+}
+
+.illustrator::-webkit-progress-value,
+.node-js::-webkit-progress-value {
+    /* Gradient background with Stripes */
+    background-image:
+        -webkit-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            rgba(0, 0, 0, .1) 33%,
+            rgba(0, 0, 0, .1) 66%,
+            transparent 66%),
+        -webkit-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(0, 0, 0, .2)),
+        -webkit-linear-gradient(left, rgb(147, 193, 209), rgb(0, 255, 106));
+}
+
+.mysql::-webkit-progress-value,
+.indesign::-webkit-progress-value {
+    /* Gradient background with Stripes */
+    background-image:
+        -webkit-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            rgba(0, 0, 0, .1) 33%,
+            rgba(0, 0, 0, .1) 66%,
+            transparent 66%),
+        -webkit-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(0, 0, 0, .2)),
+        -webkit-linear-gradient(left, rgb(204, 0, 204), rgb(228, 255, 174));
+}
+
+.mongo::-webkit-progress-value,
+.dreamwaever::-webkit-progress-value {
+    /* Gradient background with Stripes */
+    background-image:
+        -webkit-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            rgba(0, 0, 0, .1) 33%,
+            rgba(0, 0, 0, .1) 66%,
+            transparent 66%),
+        -webkit-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(0, 0, 0, .2)),
+        -webkit-linear-gradient(left, rgb(19, 72, 90), rgb(169, 255, 120));
+}
+
+.rethink::-webkit-progress-value,
+.XD::-webkit-progress-value {
+    /* Gradient background with Stripes */
+    background-image:
+        -webkit-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            rgba(0, 0, 0, .1) 33%,
+            rgba(0, 0, 0, .1) 66%,
+            transparent 66%),
+        -webkit-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(0, 0, 0, .2)),
+        -webkit-linear-gradient(left, rgb(245, 130, 169), #6d0019);
+}
+
+/* Similarly, for Mozillaa. Unfortunately combining the styles for different browsers will break every other browser. Hence, we need a separate block. */
+
+.html5::-moz-progress-bar,
+.fr::-moz-progress-bar {
+    /* Gradient background with Stripes */
+    background-image:
+        -moz-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            rgba(0, 0, 0, .1) 33%,
+            rgba(0, 0, 0, .1) 66%,
+            transparent 66%),
+        -moz-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(0, 0, 0, .2)),
+        -moz-linear-gradient(left, rgb(89, 158, 104), rgb(199, 107, 187));
+}
+
+.css3::-moz-progress-bar,
+.en::-moz-progress-bar {
+
+    /* Gradient background with Stripes */
+    background-image:
+        -moz-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            rgba(0, 0, 0, .1) 33%,
+            rgba(0, 0, 0, .1) 66%,
+            transparent 66%),
+        -moz-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(0, 0, 0, .2)),
+        -moz-linear-gradient(left, #09c, rgb(247, 247, 112));
+}
+
+.javascript::-moz-progress-bar,
+.es::-moz-progress-bar {
+    /* Gradient background with Stripes */
+    background-image:
+        -moz-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            rgba(0, 0, 0, .1) 33%,
+            rgba(0, 0, 0, .1) 66%,
+            transparent 66%),
+        -moz-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(0, 0, 0, .2)),
+        -moz-linear-gradient(left, #09c, #690);
+}
+
+/* Similarly, for Mozillaa. Unfortunately combining the styles for different browsers will break every other browser. Hence, we need a separate block. */
+
+.photoshop::-moz-progress-bar,
+.php::-moz-progress-bar {
+    /* Gradient background with Stripes */
+    background-image:
+        -moz-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            rgba(0, 0, 0, .1) 33%,
+            rgba(0, 0, 0, .1) 66%,
+            transparent 66%),
+        -moz-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(0, 0, 0, .2)),
+        -moz-linear-gradient(left, rgb(247, 247, 112), rgb(111, 59, 255));
+}
+
+.node-js::-moz-progress-bar,
+.illustrator::-moz-progress-bar {
+
+    /* Gradient background with Stripes */
+    background-image:
+        -moz-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            rgba(0, 0, 0, .1) 33%,
+            rgba(0, 0, 0, .1) 66%,
+            transparent 66%),
+        -moz-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(0, 0, 0, .2)),
+        -moz-linear-gradient(left, rgb(147, 193, 209), rgb(0, 255, 106));
+}
+
+.mysql::-moz-progress-bar,
+.indesign::-moz-progress-bar {
+    /* Gradient background with Stripes */
+    background-image:
+        -moz-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            rgba(0, 0, 0, .1) 33%,
+            rgba(0, 0, 0, .1) 66%,
+            transparent 66%),
+        -moz-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(0, 0, 0, .2)),
+        -moz-linear-gradient(left, rgb(204, 0, 204), rgb(228, 255, 174));
+}
+
+.mongo::-moz-progress-bar,
+.dreamwaever::-moz-progress-bar {
+    /* Gradient background with Stripes */
+    background-image:
+        -moz-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            rgba(0, 0, 0, .1) 33%,
+            rgba(0, 0, 0, .1) 66%,
+            transparent 66%),
+        -moz-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(0, 0, 0, .2)),
+        -moz-linear-gradient(left, rgb(19, 72, 90), rgb(169, 255, 120));
+}
+
+.rethink::-moz-progress-bar,
+.XD::-moz-progress-bar {
+    /* Gradient background with Stripes */
+    background-image:
+        -moz-linear-gradient(135deg,
+            transparent,
+            transparent 33%,
+            rgba(0, 0, 0, .1) 33%,
+            rgba(0, 0, 0, .1) 66%,
+            transparent 66%),
+        -moz-linear-gradient(top,
+            rgba(255, 255, 255, .25),
+            rgba(0, 0, 0, .2)),
+        -moz-linear-gradient(left, rgb(245, 130, 169), #6d0019);
+}
